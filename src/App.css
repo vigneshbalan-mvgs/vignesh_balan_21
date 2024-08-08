@@ -1,3 +1,10 @@
+body,html{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -7,7 +14,7 @@
 /* For the outermost div */
 .app-container {
   overflow-x: hidden;
-  color: #d1d5db; /* Equivalent to text-neutral-300 */
+  color: #d1d5db; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; /* Equivalent to antialiased */
   background-color: #67e8f9; /* Equivalent to bg-cyan-300 */
