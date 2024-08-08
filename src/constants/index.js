@@ -5,9 +5,10 @@ import project4 from "../assets/projects/project-4.jpg";
 
 export const HERO_CONTENT = `I am a dedicated front-end developer with a passion for creating responsive and user-friendly web applications. Proficient in React.js, JavaScript, HTML, and CSS, I thrive in collaborative environments and enjoy tackling complex coding challenges. Additionally, I am well-versed in working with Linux environments, enhancing my efficiency and ability to troubleshoot and debug applications. My career goal is to leverage my skills in web development and Linux to build innovative and high-performing web solutions.`;
 
-export const ABOUT_TEXT = `I am Vignesh Balan M, a dedicated front-end developer with a strong foundation in HTML, CSS, JavaScript, and React. I hold a BSc in Computer Science from Dr. Zakir Hussain College, Illayangudi, Tamil Nadu, and have hands-on experience from my internship at Senchola University. My skills extend to working within a Linux environment and using Neovim for efficient coding. I have also completed certifications in FrontEnd Intern from Senchola, Web Development on Udemy, and JavaScript Mastery on Udemy.
+export const ABOUT_TEXT1 = `I am Vignesh Balan M, a dedicated front-end developer with a strong foundation in HTML, CSS, JavaScript, and React. I hold a BSc in Computer Science from Dr. Zakir Hussain College, Illayangudi, Tamil Nadu, and have hands-on experience from my internship at Senchola University. My skills extend to working within a Linux environment and using Neovim for efficient coding. I have also completed certifications in FrontEnd Intern from Senchola, Web Development on Udemy, and JavaScript Mastery on Udemy.
 
-Throughout my projects, including developing a responsive e-commerce site, a personal portfolio website, and a blogging platform, I have demonstrated my ability to create high-quality, user-friendly web applications. I am highly motivated, detail-oriented, and eager to bring my problem-solving skills and technical expertise to a dynamic team, contributing positively to any project I undertake.`;
+`;
+export const ABOUT_TEXT2 = `Throughout my projects, including developing a responsive e-commerce site, a personal portfolio website, and a blogging platform, I have demonstrated my ability to create high-quality, user-friendly web applications. I am highly motivated, detail-oriented, and eager to bring my problem-solving skills and technical expertise to a dynamic team, contributing positively to any project I undertake.` 
 
 export const EXPERIENCES = [
   {

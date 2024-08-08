@@ -4,39 +4,47 @@
   padding: 2rem;
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* For the outermost div */
+.app-container {
+  overflow-x: hidden;
+  color: #d1d5db; /* Equivalent to text-neutral-300 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; /* Equivalent to antialiased */
+  background-color: #67e8f9; /* Equivalent to bg-cyan-300 */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Custom selection style */
+.app-container::selection {
+  color: #67e8f9; /* Equivalent to selection:text-cyan-300 */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* For the fixed div */
+.fixed-background {
+  position: fixed;
+  top: 0;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
 }
 
-.card {
-  padding: 2em;
+.absolute-background {
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  height: 100vh; /* Equivalent to h-screen */
+  width: 100vw; /* Equivalent to w-screen */
+  background-color: #171717; /* Equivalent to bg-neutral-950 */
+  background-image: radial-gradient(
+    ellipse 80% 80% at 50% -20%,
+    rgba(120, 119, 198, 0.3),
+    rgba(255, 255, 255, 0)
+  );
 }
 
-.read-the-docs {
-  color: #888;
+.container {
+  max-width: 1280px; /* Equivalent to mx-auto */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem; /* Equivalent to px-8 */
+  padding-right: 2rem; /* Equivalent to px-8 */
 }
