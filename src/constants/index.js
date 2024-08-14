@@ -1,6 +1,7 @@
 import project1 from "../assets/projects/project-1.png";
 import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.png";
+import project4 from "../assets/projects/project-4.png";
 
 export const HERO_CONTENT = `I am a dedicated front-end developer with a passion for creating responsive and user-friendly web applications. Proficient in React.js, JavaScript, HTML, and CSS, I thrive in collaborative environments and enjoy tackling complex coding challenges. Additionally, I am well-versed in working with Linux environments, enhancing my efficiency and ability to troubleshoot and debug applications. My career goal is to leverage my skills in web development and Linux to build innovative and high-performing web solutions.`;
 
@@ -29,14 +30,7 @@ export const PROJECTS = [
       "A fully functional e-commerce website with features like product listing, shopping cart, and search not responsive .",
     technologies: ["HTML", "CSS","JavaScript", "React", "Bootstrap"],
   },
-  {
-    title: "Note Taking App",
-    link: "https://shoppper101.netlify.app/",
-    image: project2,
-    description:
-      "An application for managing tasks and projects, with features such as Taking notes and searching notes with tags ",
-    technologies: ["HTML", "CSS","Javascript", "React", "Tailwind"],
-  },
+
   {
     title: "Portfolio Website",
     link: "https://vigneshbalan21.netlify.app/",
@@ -46,6 +40,14 @@ export const PROJECTS = [
     technologies: ["HTML", "CSS", "React", "Tailwind"],
   },
   
+{
+    title: "Signup & Login",
+    link: "https://signin-login-mvgs.netlify.app/",
+    image: project4,
+    description:
+      "A Signin and login page which is beatifully designed by using CSS only",
+    technologies: ["HTML", "CSS","Javascript"],
+  },
 ];
 
 export const CONTACT = {

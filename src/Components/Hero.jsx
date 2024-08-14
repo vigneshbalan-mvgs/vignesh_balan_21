@@ -19,7 +19,7 @@ const Hero = () => {
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col items-center lg:items-start">
             <motion.h1
-             variants={container(0)} 
+             variants={container(0.3)} 
              initial="hidden"
              animate='visible'
               className="pb-16 text-6xl font-thin tracking-tighter lg:mt-16 lg:text-8xl"
@@ -47,7 +47,6 @@ const Hero = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{duration:1, delay: 1.2}}
               className="rounded w-4/5"
-              src={profilePic} alt="" />
           </div>
         </div>
       </div>

@@ -18,11 +18,11 @@ const About = () => {
             
 
             className="flex items-center justify-center">
-            <img className="rounded w-3/4" src={aboutImg} alt="about" />
+            <img className="rounded w-3/4 " style={{ width: 400 } }  src={aboutImg} alt="about" />
           </motion.div>
           
        </div>
- <div className="w-full lg:w-1/2">
+ <div classNamek="w-full lg:w-1/2">
             <div className="flex justify-center lg:justify-start">
               <motion.p  whileInView={{opacity:1, x:0}}
             initial={{opacity:0,x:100}}
