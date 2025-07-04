@@ -88,14 +88,14 @@ const Technologies = () => {
               <h3 className="text-3xl font-bold text-center mb-10 text-dark-accent dark:text-light-accent">
                 {category.title}
               </h3>
-              <div className="flex flex-row flex-nowrap overflow-x-auto gap-4 justify-center items-center py-4">
+              <div className="flex flex-row flex-nowrap overflow-x-auto gap-4 justify-start sm:justify-center items-center py-4 scrollbar-hide scroll-smooth snap-x snap-mandatory pl-4 pr-4 sm:pl-0 sm:pr-0">
                 {category.items.map((tech, techIndex) => {
                   const IconComponent = iconComponents[tech.icon];
                   return (
                     <motion.div
                       key={techIndex}
                       variants={itemVariants}
-                      className="bg-dark-card dark:bg-light-card p-4 rounded-lg shadow-lg flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300 min-h-[100px] w-[100px] flex-shrink-0"
+                      className="bg-dark-card dark:bg-light-card p-4 rounded-lg shadow-lg flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300 min-h-[100px] w-[100px] flex-shrink-0 snap-center"
                     >
                       {IconComponent && <IconComponent className="text-5xl" style={{ color: tech.color }} />}
                     </motion.div>

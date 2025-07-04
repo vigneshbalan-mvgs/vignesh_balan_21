@@ -1,6 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
+const getThemeColor = (theme) => {
+  // Adjust these colors as per your theme palette
+  return theme === "dark" ?  "#0077ff": "#00ff99";
+};
+
 const CustomCursor = () => {
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
@@ -19,7 +24,29 @@ const CustomCursor = () => {
 
   const [currentSpeed, setCurrentSpeed] = useState(0);
 
-  const cursorColor = "#00ff99"; // Define a single color for all elements
+  const [theme, setTheme] = useState(
+    typeof window !== "undefined"
+      ? localStorage.getItem("theme") || "dark"
+      : "dark"
+  );
+
+  useEffect(() => {
+    const handleStorage = () => {
+      setTheme(localStorage.getItem("theme") || "dark");
+    };
+    window.addEventListener("storage", handleStorage);
+    // Optionally listen for class changes if theme is toggled via class
+    const observer = new MutationObserver(() => {
+      setTheme(localStorage.getItem("theme") || "dark");
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    return () => {
+      window.removeEventListener("storage", handleStorage);
+      observer.disconnect();
+    };
+  }, []);
+
+  const cursorColor = getThemeColor(theme);
 
   useEffect(() => {
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
@@ -126,9 +153,9 @@ const CustomCursor = () => {
   const mainCursorStyle = {
     translateX: cursorXSpring,
     translateY: cursorYSpring,
-    filter: `blur(${isMoving ? Math.min(10, currentSpeed * 0.5) : 0}px)`, // Blur based on speed, max 10px
+    filter: `blur(${isMoving ? Math.min(10, currentSpeed * 0.5) : 0}px)`,
     backgroundColor: cursorColor,
-    scale: isMoving ? Math.min(1.5, 1 + currentSpeed * 0.05) : 0.8, // Scale based on speed, smaller when stationary
+    scale: isMoving ? Math.min(1.5, 1 + currentSpeed * 0.05) : 0.8,
     opacity: isMoving ? 0.8 : 1,
   };
 
@@ -136,7 +163,7 @@ const CustomCursor = () => {
     translateX: cursorXSpring,
     translateY: cursorYSpring,
     backgroundColor: cursorColor,
-    scale: isMoving ? 0.5 : 0.2, // Smaller when stationary
+    scale: isMoving ? 0.5 : 0.2,
     opacity: isMoving ? 0.5 : 1,
   };
 
