@@ -3,59 +3,92 @@ import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/Profile.jpg";
 import { motion } from "framer-motion";
 
-const container = (delay) => ({
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const textVariants = {
   hidden: { x: -100, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: delay },
+    transition: { duration: 0.8, ease: "easeOut" },
   },
-});
+};
+
+const imageVariants = {
+  hidden: { x: 100, opacity: 0, scale: 0.8 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
 
 const Hero = () => {
   return (
-    <div className="min-h-90 border-b border-neutral-900 pb-4 lg:mb-35">
-      <div className="flex flex-wrap">
-        <div className="w-full lg:w-1/2">
-          <div className="flex flex-col items-center lg:items-start">
+    <div id="hero" className="bg-dark-background text-dark-text dark:bg-light-background dark:text-light-text py-20 cursor-grab">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center justify-between">
+          <motion.div
+            className="md:w-1/2 text-center md:text-left"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <motion.h1
-              variants={container(0.3)}
-              initial="hidden"
-              animate="visible"
-              className="pb-16 text-6xl font-thin tracking-tighter lg:mt-16 lg:text-8xl"
+              variants={textVariants}
+              className="text-5xl font-bold mb-4"
             >
               Vignesh Balan
             </motion.h1>
-            <motion.span
-              variants={container(0.5)}
-              initial="hidden"
-              animate="visible"
-              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent"
+            <motion.h2
+              variants={textVariants}
+              className="text-3xl text-dark-accent dark:text-light-accent mb-8"
             >
-              {" "}
               Application Developer
-            </motion.span>
-
+            </motion.h2>
             <motion.p
-              variants={container(1)}
-              initial="hidden"
-              animate="visible"
-              className="my-2 max-w-xl py-6 font-light tracking-tighter"
+              variants={textVariants}
+              className="text-lg text-dark-text-secondary dark:text-light-text-secondary mb-8"
             >
               {HERO_CONTENT}
             </motion.p>
-          </div>
-        </div>
-        <div className="w-full lg:w-1/2 lg:p-8">
-          <div className="flex justify-center ">
-            <motion.img
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.2 }}
-              className="rounded w-4/5"
-              src={profilePic}
-            />
-          </div>
+            <motion.a
+              href="#contact"
+              variants={textVariants}
+              className="bg-dark-accent text-dark-background dark:bg-light-accent dark:text-light-background font-bold py-3 px-6 rounded-full hover:bg-opacity-80 transition duration-300"
+            >
+              Get in Touch
+            </motion.a>
+          </motion.div>
+          <motion.div
+            className="md:w-1/2 mt-10 md:mt-0"
+            variants={imageVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <div className="relative">
+              <img
+                src={profilePic}
+                alt="Vignesh Balan"
+                className="rounded-full shadow-lg mx-auto w-80 h-80 object-cover"
+              />
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 border-4 border-dark-accent dark:border-light-accent rounded-full opacity-50"
+              ></motion.div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>

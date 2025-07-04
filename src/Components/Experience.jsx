@@ -1,37 +1,41 @@
 import React from "react";
 import { EXPERIENCES } from "../constants";
-import { space } from "postcss/lib/list";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4">
-      <h1 className="my-20 text-center text-4xl">Experience</h1>
-      <div>
-        {EXPERIENCES.map((experience, index) => {
-          <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-            <div className="w-full lg:w-1/4">
-              <p className="mb-2 text-sm text-neutral-400">{experience.year}</p>
-            </div>
-            <div className="w-full max-w-xl lg:w-3/4">
-              <h6 className="mb-2 font-semifold">
-                {experience.role}{" "}
-                <span className="text-sm text-purple-100">
-                  {experience.company}
-                </span>
-              </h6>
-              <p className="mb-4 text-neutral-400">{experience.description}</p>
-              {experience.technologies.map((tech, index) => {
-                <span
-                  key={index}
-                  className="mr-2 mt-4 rounded bg-neutral-900 py-1 text-sm font-medium text-purple-800"
-                >
-                  {" "}
-                  {tech}
-                </span>;
-              })}
-            </div>
-          </div>;
-        })}
+    <div id="experience" className="bg-dark-card text-dark-text dark:bg-light-card dark:text-light-text py-20 px-4 cursor-vertical-text">
+      <div className="mx-auto max-w-4xl">
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold text-center mb-12"
+        >
+          Experience
+        </motion.h2>
+        <div className="space-y-12">
+          {EXPERIENCES.map((experience, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="bg-dark-background dark:bg-light-background p-8 rounded-lg shadow-lg"
+            >
+              <h3 className="text-3xl font-bold text-dark-accent dark:text-light-accent mb-2">{experience.role}</h3>
+              <p className="text-xl text-dark-text-secondary dark:text-light-text-secondary mb-4">{experience.company} | {experience.year}</p>
+              <p className="text-lg text-dark-text-secondary dark:text-light-text-secondary mb-4">{experience.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {experience.technologies.map((tech, techIndex) => (
+                  <span key={techIndex} className="bg-dark-accent text-dark-background dark:bg-light-accent dark:text-light-background text-sm font-semibold px-3 py-1 rounded-full">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

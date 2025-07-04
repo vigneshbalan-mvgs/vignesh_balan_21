@@ -1,57 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
+import ProjectModal from "./ProjectModal";
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
+
   return (
-    <div className="border-b border-neutral-900 pb-4">
-      <h2 className="my-20 text-center text-4xl">Projects</h2>
-      <div>
-        {PROJECTS.map((project, index) => {
-          return (
+    <div id="projects" className="bg-dark-background text-dark-text dark:bg-light-background dark:text-light-text py-20 px-4 cursor-zoom-in">
+      <div className="mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold text-center mb-12"
+        >
+          Projects
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {PROJECTS.map((project, index) => (
             <motion.div
               key={index}
-              className="mb-8 flex flex-wrap lg:justify-center"
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-dark-card dark:bg-light-card rounded-lg shadow-lg overflow-hidden cursor-pointer"
+              onClick={() => openModal(project)}
             >
-              <div className="w-full lg:w-1/4 lg:mr-12">
-                <img
-                  src={project.image}
-                  width={250}
-                  height={250}
-                  alt={project.title}
-                  className="mb-6 rounded w-full"
-                />
-              </div>
-              <div className="w-full max-w-xl lg:w-3/4">
-                <a
-                  href={project.link}
-                  target="__blank"
-                  rel="noopener noreferrer"
-                >
-                  <h6 className="mb-2 font-semibold">{project.title}</h6>
-                </a>
-                <p className="mb-4 text-neutral-400">{project.description}</p>
-                {project.technologies.map((tech, techIndex) => {
-                  return (
-                    <motion.span
-                      key={techIndex}
-                      className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800"
-                      whileInView={{ opacity: 1 }}
-                      initial={{ opacity: 0 }}
-                      transition={{ duration: 0.3, delay: techIndex * 0.1 }} // Staggered animation for technologies
-                    >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-56 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-dark-accent dark:text-light-accent mb-2">{project.title}</h3>
+                <p className="text-dark-text-secondary dark:text-light-text-secondary mb-4">{project.description}</p>
+                <div className="flex flex-wrap mb-4">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span key={techIndex} className="bg-dark-background text-dark-accent dark:bg-light-background dark:text-light-accent text-sm font-semibold mr-2 mb-2 px-2 py-1 rounded">
                       {tech}
-                    </motion.span>
-                  );
-                })}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
-          );
-        })}
+          ))}
+        </div>
       </div>
+      {selectedProject && (
+        <ProjectModal project={selectedProject} onClose={closeModal} />
+      )}
     </div>
   );
 };

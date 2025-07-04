@@ -1,32 +1,71 @@
-import React from 'react'
-import { CONTACT } from '../constants'
-import { motion } from 'framer-motion'
+import React from "react";
+import { CONTACT } from "../constants";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
 
 const Contact = () => {
   return (
-      <div className='border-b border-neutral-900 pb-20'>
-      <motion.h1
-        whileInView={{opacity: 1, y: 0}}
-        initial={{opacity: 0 , y : -100}}
-        transition={{duration: 0.5}}
-        className='my-12 text-center text-4xl'>
-            Get in Touch
-          </motion.h1>     
-          <div className='text-center tracking-tighter'>
-        <motion.p
-        // whileInView={{opacity: 1, x: 0}}
-        // initial={{opacity: 0 , x : -100}}
-        // transition={{duration: 1}}
-          
-          className='my-4'>{CONTACT.phoneNo}</motion.p>
-        <motion.a
-        // whileInView={{opacity: 1, x: 0}}
-        // initial={{opacity: 0 , x : -100}}
-        // transition={{duration: 1}}
-          href="mailto:vigneshbalanmvgs2003@gmail.com" className='border-b '>{CONTACT.email}</motion.a>
-          </div>
+    <motion.div
+      id="contact"
+      className="bg-dark-card text-dark-text dark:bg-light-card dark:text-light-text py-20 cursor-pointer"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+    >
+      <div className="container mx-auto px-4">
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold text-center mb-12"
+        >
+          Get in Touch
+        </motion.h2>
+        <div className="max-w-lg mx-auto text-center">
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-dark-text-secondary dark:text-light-text-secondary mb-8"
+          >
+            I'm currently available for freelance work and open to discussing new projects. Feel free to reach out to me.
+          </motion.p>
+          <motion.div variants={itemVariants}>
+            <a
+              href={`mailto:${CONTACT.email}`}
+              className="bg-dark-accent text-dark-background dark:bg-light-accent dark:text-light-background font-bold py-3 px-6 rounded-full hover:bg-opacity-80 transition duration-300"
+            >
+              Email Me
+            </a>
+          </motion.div>
+          <motion.div
+            variants={itemVariants}
+            className="mt-8 text-dark-text-secondary dark:text-light-text-secondary"
+          >
+            <p>Phone: {CONTACT.phoneNo}</p>
+          </motion.div>
+        </div>
       </div>
-  )
-}
+    </motion.div>
+  );
+};
 
-export default Contact
+export default Contact;

@@ -1,106 +1,112 @@
 import { RiReactjsLine } from "react-icons/ri";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { FaDocker } from "react-icons/fa";
-import { SiGnubash } from "react-icons/si";
+import { FaNodeJs, FaGitAlt, FaGithub, FaFigma, FaLinux, FaJava } from "react-icons/fa";
+import {
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiSqlite,
+  SiPostgresql,
+  SiPm2,
+  SiNginx,
+  SiGimp,
+  SiAdobeillustrator,
+  SiDavinciresolve,
+  SiTypescript,
+  SiCplusplus,
+  SiJavascript,
+} from "react-icons/si";
 import { GrArchlinux } from "react-icons/gr";
-import { FaJava } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { TECHNOLOGIES } from "../constants";
 
-const iconVariants = (duration) => ({
-  initial: { y: -10 },
-  animate: {
-    y: [10, -10],
+const iconComponents = {
+  RiReactjsLine,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaFigma,
+  FaLinux,
+  FaJava,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiSqlite,
+  SiPostgresql,
+  SiPm2,
+  SiNginx,
+  SiGimp,
+  SiAdobeillustrator,
+  SiDavinciresolve,
+  SiTypescript,
+  SiCplusplus,
+  SiJavascript,
+  GrArchlinux,
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
     transition: {
-      duration: duration,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "reverse",
+      staggerChildren: 0.1,
+      delayChildren: 0.5,
     },
   },
-});
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 100, damping: 10, duration: 0.15 },
+  },
+};
 
 const Technologies = () => {
   return (
-    <div className="border-b border-neutral-800 pb-24">
-      <motion.h1
-        whileInView={{opacity:1,y:0}}
-        initial={{opacity:0, y:-100}}
-        transition={{duration:1.5}}
-        className="my-20 text-center text-4xl ">Technologies</motion.h1>
-      <motion.div
-        whileInView={{opacity:1,x:0}}
-        initial={{opacity:0,x:-100}}
-        transition={{duration: 1.5}}
-        
-        className="flex flex-wrap items-center justify-center gap-4">
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
+    <motion.div
+      id="technologies"
+      className="bg-dark-background text-dark-text dark:bg-light-background dark:text-light-text py-20 px-4 cursor-cell overflow-x-hidden overflow-y-auto"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+    >
+      <div className="mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold text-center mb-12"
         >
-          <FaHtml5 className="text-7xl" style={{ color: "#E34F26" }} />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaCss3Alt className="text-7xl" style={{ color: "#1572B6" }} />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <IoLogoJavascript className="text-7xl" style={{ color: "#F7DF1E" }} />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(6)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <RiReactjsLine className="text-7xl" style={{ color: "#61DAFB" }} />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(1)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaDocker className="text-7xl" style={{ color: "#2496ED" }} />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiGnubash className="text-7xl" style={{ color: "#4EAA25" }} />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <GrArchlinux className="text-7xl" style={{ color: "#1793D1" }} />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaJava className="text-7xl" style={{ color: "#007396" }} />
-        </motion.div>
-      </motion.div>
-    </div>
+          Technologies
+        </motion.h2>
+        <div className="space-y-16">
+          {TECHNOLOGIES.map((category, categoryIndex) => (
+            <div key={categoryIndex}>
+              <h3 className="text-3xl font-bold text-center mb-10 text-dark-accent dark:text-light-accent">
+                {category.title}
+              </h3>
+              <div className="flex flex-row flex-nowrap overflow-x-auto gap-4 justify-center items-center py-4">
+                {category.items.map((tech, techIndex) => {
+                  const IconComponent = iconComponents[tech.icon];
+                  return (
+                    <motion.div
+                      key={techIndex}
+                      variants={itemVariants}
+                      className="bg-dark-card dark:bg-light-card p-4 rounded-lg shadow-lg flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300 min-h-[100px] w-[100px] flex-shrink-0"
+                    >
+                      {IconComponent && <IconComponent className="text-5xl" style={{ color: tech.color }} />}
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
   );
 };
 
