@@ -2,7 +2,11 @@
   {
     "projectName": "Dropso Matrimony",
     "type": "app",
-    "technologies": ["React Native Expo", "Node.js", "PostgreSQL"],
+    "technologies": [
+      "React Native Expo",
+      "Node.js",
+      "PostgreSQL"
+    ],
     "organization": "Devbeans",
     "images": [
       "/images/projects/Dropso1.png",
@@ -28,7 +32,11 @@
   {
     "projectName": "SportsPersonz",
     "type": "app",
-    "technologies": ["React Native Expo", "Node.js", "MongoDB"],
+    "technologies": [
+      "React Native Expo",
+      "Node.js",
+      "MongoDB"
+    ],
     "organization": "CodeShell Technologies",
     "images": [
       "/images/projects/SportsPerson_01.png",
@@ -57,22 +65,29 @@
     }
   },
   {
-    "projectName": "Shopping Application (MERN Stack)",
+    "projectName": "Universel Table Editor",
     "type": "website",
-    "technologies": ["React", "Node.js", "MongoDB", "Express", "Bootstrap"],
+    "technologies": [
+      "React",
+      "TailWind"
+    ],
     "organization": "Personal Project",
     "images": [
-      "/images/projects/project-1.png",
-      "/images/projects/project-3.png",
-      "/images/projects/project-2.jpg"
+      "/images/projects/TableEditor_01.png",
+      "/images/projects/TableEditor_02.png",
+      "/images/projects/TableEditor_03.png",
+      "/images/projects/TableEditor_04.png",
+      "/images/projects/TableEditor_05.png",
+      "/images/projects/TableEditor_06.png",
+      "/images/projects/TableEditor_07.png"
     ],
     "descriptions": [
-      "A full-featured e-commerce platform. Developed key features like product listings, cart system, authentication, and payment gateway. Designed a mobile-optimized responsive interface to enhance the user experience.",
-      "This is a complete end-to-end e-commerce application designed to provide a seamless shopping experience. It includes essential features such as dynamic product listings, a comprehensive shopping cart system, secure user authentication, and integrated payment gateway options. The application boasts a highly responsive user interface, optimized for mobile-first users, ensuring accessibility and usability across various devices. The MERN stack provides a scalable and efficient foundation for all functionalities."
+      "Table Editor for SQLite, JSON, csv",
+      "This is Most used to view and edit , search through the details of the file's"
     ],
     "links": {
-      "github": "https://github.com/vigneshbalan-mvgs/MERN-stack-ecommerce",
-      "demo": "https://shoppper101.netlify.app/"
+      "github": null,
+      "demo": "https://mvgs-universal-table-editor.netlify.app/"
     }
   }
 ]
