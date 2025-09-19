@@ -55,16 +55,23 @@ const ProjectDetails = ({ project, onClose }) => {
 
             <div className="flex flex-col">
               <div>
-                <h3 className="text-lg sm:text-xl font-bold text-dark-accent dark:text-light-accent mb-3 sm:mb-4 border-b-2 border-dark-accent/50 dark:border-light-accent/50 pb-2">Description</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-dark-accent dark:text-light-accent mb-3 sm:mb-4 border-b-2 border-dark-accent/50 dark:border-light-accent/50 pb-2">
+                  Description
+                </h3>
                 {project.descriptions.map((desc, index) => (
-                  <p key={index} className="text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">
+                  <p
+                    key={index}
+                    className="text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed"
+                  >
                     {desc}
                   </p>
                 ))}
               </div>
 
               <div className="mt-4 sm:mt-6">
-                <h3 className="text-lg sm:text-xl font-bold text-dark-accent dark:text-light-accent mb-3 sm:mb-4 border-b-2 border-dark-accent/50 dark:border-light-accent/50 pb-2">Technologies</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-dark-accent dark:text-light-accent mb-3 sm:mb-4 border-b-2 border-dark-accent/50 dark:border-light-accent/50 pb-2">
+                  Technologies
+                </h3>
                 <div className="flex flex-wrap gap-2 sm:gap-3">
                   {project.technologies.map((tech, index) => (
                     <span
@@ -87,7 +94,7 @@ const ProjectDetails = ({ project, onClose }) => {
                 key={index}
                 src={image}
                 alt={`${project.projectName} thumbnail ${index + 1}`}
-                className={`w-20 h-14 sm:w-24 sm:h-16 object-cover rounded-lg cursor-pointer transition-all duration-200 ${selectedImage === image ? 'ring-4 ring-dark-accent dark:ring-light-accent scale-105' : 'opacity-60 hover:opacity-100'}`}
+                className={`w-20 h-14 sm:w-24 sm:h-16 object-cover rounded-lg cursor-pointer transition-all duration-200 ${selectedImage === image ? "ring-4 ring-dark-accent dark:ring-light-accent scale-105" : "opacity-60 hover:opacity-100"}`}
                 onClick={() => setSelectedImage(image)}
               />
             ))}
@@ -98,7 +105,7 @@ const ProjectDetails = ({ project, onClose }) => {
                 href={project.links.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-dark-accent hover:bg-opacity-80 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-all duration-300 shadow-lg transform hover:scale-105 text-xs sm:text-sm"
+                className="bg-light-accent dark:bg-ligth-accent hover:bg-opacity-80 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-all duration-300 shadow-lg transform hover:scale-105 text-xs sm:text-sm"
               >
                 Live Demo
               </a>
