@@ -10,7 +10,7 @@ const Experience = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-center mb-12"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12"
         >
           Experience
         </motion.h2>
@@ -23,12 +23,12 @@ const Experience = () => {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="bg-dark-background dark:bg-light-background p-8 rounded-lg shadow-lg"
             >
-              <h3 className="text-3xl font-bold text-dark-accent dark:text-light-accent mb-2">{experience.role}</h3>
-              <p className="text-xl text-dark-text-secondary dark:text-light-text-secondary mb-4">{experience.company} | {experience.year}</p>
-              <p className="text-lg text-dark-text-secondary dark:text-light-text-secondary mb-4">{experience.description}</p>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark-accent dark:text-light-accent mb-2">{experience.role}</h3>
+              <p className="text-lg sm:text-xl lg:text-2xl text-dark-text-secondary dark:text-light-text-secondary mb-4">{experience.company} | {experience.year}</p>
+              <p className="text-base sm:text-lg lg:text-xl text-dark-text-secondary dark:text-light-text-secondary mb-4">{experience.description}</p>
               <div className="flex flex-wrap gap-2">
                 {experience.technologies.map((tech, techIndex) => (
-                  <span key={techIndex} className="bg-dark-accent text-dark-background dark:bg-light-accent dark:text-light-background text-sm font-semibold px-3 py-1 rounded-full">
+                  <span key={techIndex} className="bg-dark-accent text-dark-background dark:bg-light-accent dark:text-light-background text-xs sm:text-sm lg:text-base font-semibold px-3 py-1 rounded-full">
                     {tech}
                   </span>
                 ))}

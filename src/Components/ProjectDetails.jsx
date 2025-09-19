@@ -25,11 +25,11 @@ const ProjectDetails = ({ project, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex-shrink-0 p-4 sm:p-6 flex items-center justify-between border-b border-dark-accent/20 dark:border-light-accent/20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-accent dark:text-light-accent">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-dark-accent dark:text-light-accent">
             {project.projectName}
           </h2>
           <button
-            className="text-dark-text dark:text-light-text text-3xl sm:text-4xl hover:text-red-500 transition-colors"
+            className="text-dark-text dark:text-light-text text-2xl sm:text-3xl hover:text-red-500 transition-colors"
             onClick={onClose}
           >
             &times;
@@ -55,21 +55,21 @@ const ProjectDetails = ({ project, onClose }) => {
 
             <div className="flex flex-col">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-dark-accent dark:text-light-accent mb-3 sm:mb-4 border-b-2 border-dark-accent/50 dark:border-light-accent/50 pb-2">Description</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-dark-accent dark:text-light-accent mb-3 sm:mb-4 border-b-2 border-dark-accent/50 dark:border-light-accent/50 pb-2">Description</h3>
                 {project.descriptions.map((desc, index) => (
-                  <p key={index} className="text-base sm:text-lg mb-3 sm:mb-4 leading-relaxed">
+                  <p key={index} className="text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">
                     {desc}
                   </p>
                 ))}
               </div>
 
               <div className="mt-4 sm:mt-6">
-                <h3 className="text-xl sm:text-2xl font-bold text-dark-accent dark:text-light-accent mb-3 sm:mb-4 border-b-2 border-dark-accent/50 dark:border-light-accent/50 pb-2">Technologies</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-dark-accent dark:text-light-accent mb-3 sm:mb-4 border-b-2 border-dark-accent/50 dark:border-light-accent/50 pb-2">Technologies</h3>
                 <div className="flex flex-wrap gap-2 sm:gap-3">
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="bg-dark-accent/10 text-dark-accent dark:bg-light-accent/10 dark:text-light-accent text-sm sm:text-md font-semibold px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow-sm"
+                      className="bg-dark-accent/10 text-dark-accent dark:bg-light-accent/10 dark:text-light-accent text-xs sm:text-sm font-semibold px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow-sm"
                     >
                       {tech}
                     </span>
@@ -98,7 +98,7 @@ const ProjectDetails = ({ project, onClose }) => {
                 href={project.links.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-dark-accent hover:bg-opacity-80 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-all duration-300 shadow-lg transform hover:scale-105 text-sm sm:text-base"
+                className="bg-dark-accent hover:bg-opacity-80 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-all duration-300 shadow-lg transform hover:scale-105 text-xs sm:text-sm"
               >
                 Live Demo
               </a>
@@ -108,7 +108,7 @@ const ProjectDetails = ({ project, onClose }) => {
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-all duration-300 shadow-lg transform hover:scale-105 text-sm sm:text-base"
+                className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-all duration-300 shadow-lg transform hover:scale-105 text-xs sm:text-sm"
               >
                 GitHub
               </a>

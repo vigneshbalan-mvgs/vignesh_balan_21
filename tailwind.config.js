@@ -9,10 +9,10 @@ export default {
     extend: {
       colors: {
         dark: {
-          background: '#000000',
-          text: '#ffffff',
-          accent: '#00ff99',
-          card: '#1c1c22',
+          background: '#121212',
+          text: '#E0E0E0',
+          accent: '#BB86FC',
+          card: '#1E1E1E',
         },
         light: {
           background: '#f0f2f5',
@@ -23,6 +23,9 @@ export default {
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif'],
+      },
+      fontSize: {
+        xxs: ['0.65rem', { lineHeight: '0.8rem' }], // Custom extra-extra-small size
       },
     },
   },

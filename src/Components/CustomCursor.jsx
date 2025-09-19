@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const getThemeColor = (theme) => {
   // Adjust these colors as per your theme palette
-  return theme === "dark" ?  "#0077ff": "#00ff99";
+  return theme === "dark" ?  "#1a73e8": "#BB86FC";
 };
 
 const CustomCursor = () => {

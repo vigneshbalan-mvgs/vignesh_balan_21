@@ -41,7 +41,7 @@ const About = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-center mb-12"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12"
         >
           About Me
         </motion.h2>
@@ -66,10 +66,10 @@ const About = () => {
             variants={textVariants}
             className="md:w-1/2 md:pl-12"
           >
-            <p className="text-lg text-dark-text-secondary dark:text-light-text-secondary mb-6">
+            <p className="text-base sm:text-lg lg:text-xl text-dark-text-secondary dark:text-light-text-secondary mb-6">
               {ABOUT_TEXT1}
             </p>
-            <p className="text-lg text-dark-text-secondary dark:text-light-text-secondary">
+            <p className="text-base sm:text-lg lg:text-xl text-dark-text-secondary dark:text-light-text-secondary">
               {ABOUT_TEXT2}
             </p>
           </motion.div>

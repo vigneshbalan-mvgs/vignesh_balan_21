@@ -37,21 +37,21 @@ const Contact = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-center mb-12"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12"
         >
           Get in Touch
         </motion.h2>
         <div className="max-w-lg mx-auto text-center">
           <motion.p
             variants={itemVariants}
-            className="text-lg text-dark-text-secondary dark:text-light-text-secondary mb-8"
+            className="text-base sm:text-lg lg:text-xl text-dark-text-secondary dark:text-light-text-secondary mb-8"
           >
             I'm currently available for freelance work and open to discussing new projects. Feel free to reach out to me.
           </motion.p>
           <motion.div variants={itemVariants}>
             <a
               href={`mailto:${CONTACT.email}`}
-              className="bg-dark-accent text-dark-background dark:bg-light-accent dark:text-light-background font-bold py-3 px-6 rounded-full hover:bg-opacity-80 transition duration-300"
+              className="bg-dark-accent text-dark-background dark:bg-light-accent dark:text-light-background font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-full hover:bg-opacity-80 transition duration-300"
             >
               Email Me
             </a>
@@ -60,7 +60,7 @@ const Contact = () => {
             variants={itemVariants}
             className="mt-8 text-dark-text-secondary dark:text-light-text-secondary"
           >
-            <p>Phone: {CONTACT.phoneNo}</p>
+            <p className="text-base sm:text-lg lg:text-xl">Phone: {CONTACT.phoneNo}</p>
           </motion.div>
         </div>
       </div>

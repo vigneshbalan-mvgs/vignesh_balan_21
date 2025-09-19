@@ -36,7 +36,7 @@ const App = () => {
                   </div>
                   <div className="relative flex flex-col md:flex-row min-h-screen">
                     <Sidebar />
-                    <div className="flex-1 ml-0 md:ml-20">
+                    <div className="flex-1 ml-0 md:ml-20 overflow-y-auto">
                       <Hero />
                       <About />
                       <Technologies />

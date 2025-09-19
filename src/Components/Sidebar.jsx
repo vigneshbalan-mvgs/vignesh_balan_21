@@ -60,7 +60,7 @@ const Sidebar = () => {
           ${
             isDesktop
               ? "w-20 bg-dark-card dark:bg-light-card"
-              : "w-fit bg- text-light-text dark:bg-dark-card dark:text-dark-text px-6 py-8 backdrop-blur-md"
+              : "w-fit bg-dark-background text-light-text dark:bg-dark-card dark:text-dark-text px-6 py-8 backdrop-blur-md"
           }
           shadow-lg z-40 flex flex-col justify-between
           md:w-20 md:items-start md:px-4`}

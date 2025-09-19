@@ -24,14 +24,14 @@ const Projects = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-center mb-12"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12"
         >
           Projects
         </motion.h2>
 
         {/* App Projects Section */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center mb-8 text-dark-accent dark:text-light-accent">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 text-dark-accent dark:text-light-accent">
             Mobile Applications
           </h3>
           <div className="flex overflow-x-auto gap-8 snap-x snap-mandatory py-4 scrollbar-hide">
@@ -49,18 +49,18 @@ const Projects = () => {
                   className="w-full h-56 object-cover project-card-bg"
                 ></div>
                 <div className="p-4">
-                  <h4 className="text-xl font-bold text-dark-accent dark:text-light-accent mb-2">{project.projectName}</h4>
-                  <p className="text-sm text-dark-text-secondary dark:text-light-text-secondary mb-4 h-20 overflow-hidden project-description">{project.descriptions[0]}</p>
+                  <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-dark-accent dark:text-light-accent mb-2">{project.projectName}</h4>
+                  <p className="text-xs sm:text-sm lg:text-base text-dark-text-secondary dark:text-light-text-secondary mb-4 h-20 overflow-hidden project-description">{project.descriptions[0]}</p>
                 </div>
                 <div className="p-4 bg-dark-background dark:bg-light-background">
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                      <span key={techIndex} className="bg-dark-accent text-dark-background dark:bg-light-accent dark:text-light-background text-xs font-semibold px-2 py-1 rounded-full">
+                      <span key={techIndex} className="bg-dark-accent text-dark-background dark:bg-light-accent dark:text-light-background text-xxs sm:text-xs lg:text-sm font-semibold px-2 py-1 rounded-full">
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <button className="mt-4 w-full bg-dark-accent hover:bg-dark-accent-hover text-white font-bold py-2 px-4 rounded">
+                  <button className="mt-4 w-full bg-dark-accent hover:bg-dark-accent-hover text-white font-bold py-1 px-3 sm:py-2 sm:px-4 rounded">
                     View Details
                   </button>
                 </div>
@@ -71,7 +71,7 @@ const Projects = () => {
 
         {/* Website Projects Section */}
         <div>
-          <h3 className="text-3xl font-bold text-center mb-8 text-dark-accent dark:text-light-accent">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 text-dark-accent dark:text-light-accent">
             Websites
           </h3>
           <div className="flex overflow-x-auto gap-8 snap-x snap-mandatory py-4 scrollbar-hide">
@@ -89,16 +89,16 @@ const Projects = () => {
                   className="w-full h-56 object-cover project-card-bg"
                 ></div>
                 <div className="p-6">
-                  <h4 className="text-2xl font-bold text-dark-accent dark:text-light-accent mb-2">{project.projectName}</h4>
-                  <p className="text-dark-text-secondary dark:text-light-text-secondary mb-4 project-description">{project.descriptions[0]}</p>
+                  <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-dark-accent dark:text-light-accent mb-2">{project.projectName}</h4>
+                  <p className="text-sm sm:text-base lg:text-lg text-dark-text-secondary dark:text-light-text-secondary mb-4 project-description">{project.descriptions[0]}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="bg-dark-background text-dark-accent dark:bg-light-background dark:text-light-accent text-sm font-semibold px-2 py-1 rounded">
+                      <span key={techIndex} className="bg-dark-background text-dark-accent dark:bg-light-background dark:text-light-accent text-xs sm:text-sm lg:text-base font-semibold px-2 py-1 rounded">
                         {tech}
                       </span>
                     ))}
                   </div>
-                   <button className="mt-4 w-full bg-dark-accent hover:bg-dark-accent-hover text-white font-bold py-2 px-4 rounded">
+                   <button className="mt-4 w-full bg-dark-accent hover:bg-dark-accent-hover text-white font-bold py-1 px-3 sm:py-2 sm:px-4 rounded">
                     View Details
                   </button>
                 </div>
@@ -107,7 +107,7 @@ const Projects = () => {
           </div>
         </div>
         <div className="text-center mt-12">
-          <Link to="/projects" className="bg-dark-accent hover:bg-dark-accent-hover text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg transform hover:scale-105">
+          <Link to="/projects" className="bg-dark-accent hover:bg-dark-accent-hover text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-all duration-300 shadow-lg transform hover:scale-105">
             View All Projects
           </Link>
         </div>

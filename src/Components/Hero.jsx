@@ -46,26 +46,26 @@ const Hero = () => {
           >
             <motion.h1
               variants={textVariants}
-              className="text-5xl font-bold mb-4"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4"
             >
               Vignesh Balan
             </motion.h1>
             <motion.h2
               variants={textVariants}
-              className="text-3xl text-dark-accent dark:text-light-accent mb-8"
+              className="text-2xl sm:text-3xl lg:text-4xl text-dark-accent dark:text-light-accent mb-8"
             >
               Application Developer
             </motion.h2>
             <motion.p
               variants={textVariants}
-              className="text-lg text-dark-text-secondary dark:text-light-text-secondary mb-8"
+              className="text-base sm:text-lg lg:text-xl text-dark-text-secondary dark:text-light-text-secondary mb-8"
             >
               {HERO_CONTENT}
             </motion.p>
             <motion.a
               href="#contact"
               variants={textVariants}
-              className="bg-dark-accent text-dark-background dark:bg-light-accent dark:text-light-background font-bold py-3 px-6 rounded-full hover:bg-opacity-80 transition duration-300"
+              className="bg-dark-accent text-dark-background dark:bg-light-accent dark:text-light-background font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-full hover:bg-opacity-80 transition duration-300"
             >
               Get in Touch
             </motion.a>
