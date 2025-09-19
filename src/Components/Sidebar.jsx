@@ -122,7 +122,7 @@ const Sidebar = () => {
             <FaEnvelope />
           </motion.a>
           <motion.a
-            href="/vigneshbalan.pdf"
+            href="https://drive.google.com/uc?export=download&id=1D5t0NU9S64n6Jf1HLLmtPAxqqWmEw19d"
             download="VIGNESH_BALAN.pdf"
             className="transition duration-300 text-2xl text-dark-accent dark:text-light-accent"
             variants={{
