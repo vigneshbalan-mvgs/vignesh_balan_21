@@ -1,0 +1,78 @@
+[
+  {
+    "projectName": "Dropso Matrimony",
+    "type": "app",
+    "technologies": ["React Native Expo", "Node.js", "PostgreSQL"],
+    "organization": "Devbeans",
+    "images": [
+      "/images/projects/Dropso1.png",
+      "/images/projects/Dropso2.png",
+      "/images/projects/Dropso3.png",
+      "/images/projects/Dropso4.png",
+      "/images/projects/Dropso5.png",
+      "/images/projects/Dropso6.png",
+      "/images/projects/Dropso7.png",
+      "/images/projects/Dropso8.png",
+      "/images/projects/Dropso9.png",
+      "/images/projects/Dropso10.png"
+    ],
+    "descriptions": [
+      "Welcome to Dropso, the simple way to find your true love. We believe that love can happen anywhere, anytime, and our mission is to help you find your lifelong partner with ease and confidence.",
+      "Finding love shouldn’t be complicated. Our user-friendly interface makes it easy to create your profile, browse potential matches, and connect with people who catch your eye. With Dropso, your perfect match is just a few taps away."
+    ],
+    "links": {
+      "github": null,
+      "demo": "https://dropsomatrimony.com/"
+    }
+  },
+  {
+    "projectName": "SportsPersonz",
+    "type": "app",
+    "technologies": ["React Native Expo", "Node.js", "MongoDB"],
+    "organization": "CodeShell Technologies",
+    "images": [
+      "/images/projects/SportsPerson_01.png",
+      "/images/projects/SportsPerson_02.png",
+      "/images/projects/SportsPerson_03.png",
+      "/images/projects/SportsPerson_04.png",
+      "/images/projects/SportsPerson_05.png",
+      "/images/projects/SportsPerson_06.png",
+      "/images/projects/SportsPerson_07.png",
+      "/images/projects/SportsPerson_08.png",
+      "/images/projects/SportsPerson_09.png",
+      "/images/projects/SportsPerson_10.png",
+      "/images/projects/SportsPerson_11.png",
+      "/images/projects/SportsPerson_12.png",
+      "/images/projects/SportsPerson_13.png",
+      "/images/projects/SportsPerson_14.png",
+      "/images/projects/SportsPerson_15.png"
+    ],
+    "descriptions": [
+      "Elevate Your Sports Journey",
+      "An innovative app designed to connect athletes, coaches, and sports enthusiasts. Facilitating talent discovery, team building, match organizing, and events planning to foster collaboration in the sports network."
+    ],
+    "links": {
+      "github": null,
+      "demo": "https://sportspersonz.com/"
+    }
+  },
+  {
+    "projectName": "Shopping Application (MERN Stack)",
+    "type": "website",
+    "technologies": ["React", "Node.js", "MongoDB", "Express", "Bootstrap"],
+    "organization": "Personal Project",
+    "images": [
+      "/images/projects/project-1.png",
+      "/images/projects/project-3.png",
+      "/images/projects/project-2.jpg"
+    ],
+    "descriptions": [
+      "A full-featured e-commerce platform. Developed key features like product listings, cart system, authentication, and payment gateway. Designed a mobile-optimized responsive interface to enhance the user experience.",
+      "This is a complete end-to-end e-commerce application designed to provide a seamless shopping experience. It includes essential features such as dynamic product listings, a comprehensive shopping cart system, secure user authentication, and integrated payment gateway options. The application boasts a highly responsive user interface, optimized for mobile-first users, ensuring accessibility and usability across various devices. The MERN stack provides a scalable and efficient foundation for all functionalities."
+    ],
+    "links": {
+      "github": "https://github.com/vigneshbalan-mvgs/MERN-stack-ecommerce",
+      "demo": "https://shoppper101.netlify.app/"
+    }
+  }
+]
