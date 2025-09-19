@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import projects from "../Projects/projects.json";
 import { motion } from "framer-motion";
+import ProjectDetails from "./ProjectDetails";
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
   const appProjects = projects.filter((p) => p.type === "app");
   const websiteProjects = projects.filter((p) => p.type === "website");
 
-  const openLink = (url) => {
-    if (url && url !== "#") {
-      window.open(url, "_blank");
-    }
+  const openModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
   };
 
   return (
@@ -36,8 +40,8 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-dark-card dark:bg-light-card rounded-lg shadow-lg overflow-hidden flex flex-col justify-between cursor-pointer"
-                onClick={() => openLink(project.links.demo)}
+                className="bg-dark-card dark:bg-light-card rounded-lg shadow-lg overflow-hidden flex flex-col justify-between cursor-pointer transform hover:scale-105 transition-transform duration-300"
+                onClick={() => openModal(project)}
               >
                 <div className="p-4">
                   <h4 className="text-xl font-bold text-dark-accent dark:text-light-accent mb-2">{project.projectName}</h4>
@@ -56,6 +60,9 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
+                  <button className="mt-4 w-full bg-dark-accent hover:bg-dark-accent-hover text-white font-bold py-2 px-4 rounded">
+                    View Details
+                  </button>
                 </div>
               </motion.div>
             ))}
@@ -74,8 +81,8 @@ const Projects = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-dark-card dark:bg-light-card rounded-lg shadow-lg overflow-hidden cursor-pointer"
-                onClick={() => openLink(project.links.demo)}
+                className="bg-dark-card dark:bg-light-card rounded-lg shadow-lg overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300"
+                onClick={() => openModal(project)}
               >
                 <img
                   src={project.images[0]}
@@ -92,12 +99,16 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
+                   <button className="mt-4 w-full bg-dark-accent hover:bg-dark-accent-hover text-white font-bold py-2 px-4 rounded">
+                    View Details
+                  </button>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
+      <ProjectDetails project={selectedProject} onClose={closeModal} />
     </div>
   );
 };
